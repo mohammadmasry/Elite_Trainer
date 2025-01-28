@@ -1,0 +1,90 @@
+/* create_event.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0b6623; /* Football field color */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px #000;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    border-radius: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 98%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #045de9;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #09c6f9;
+    background: rgba(255, 255, 255, 1);
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 20px 20px;
+    background: linear-gradient(to right, #056ae6, #056ae6);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    transform: scale(1.0);
+    background: linear-gradient(to right, #056ae6, #056ae6);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ddd;
+}

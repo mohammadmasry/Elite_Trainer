@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Player{% endblock %}
+
+{% block body_class %}create-player-page{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_player.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Create Player</h1>
+    <form method="POST" id="create-player-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Age" required min="0">
+
+        <label for="player_number">Player Number:</label>
+        <input type="number" id="player_number" name="player_number" placeholder="Player Number" required min="0">
+        
+        <button type="submit">Create Player</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/create_player.js') }}" defer></script>
+{% endblock %}

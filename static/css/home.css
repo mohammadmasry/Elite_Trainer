@@ -1,0 +1,84 @@
+body.home-page {
+    background: url('/static/images/studium.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire screen */
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+}
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #056ae6; /* Fallback for pages without a specific class */
+    color: #fff; /* White text for visibility */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px #000; /* Adds depth */
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Navigation List */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #056ae6, #056ae6); /* Gradient button */
+    border-radius: 25px;
+    transition: transform 0.3s, background 0.3s;
+    display: inline-block;
+}
+
+ul li a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #056ae6, #056ae6); /* Slightly lighter gradient on hover */
+}
+
+ul li a:active {
+    transform: scale(0.95);
+}
+
+/* Background Overlay for All Pages */
+body:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/football-field.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Footer for credits */
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ddd;
+}

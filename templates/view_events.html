@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}View Events{% endblock %}
+
+{% block body_class %}view-events-page{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/view_events.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Events</h1>
+    <a href="{{ url_for('player.create_event') }}" class="button">Add New Event</a>
+    <ul class="event-list">
+        {% for event in events %}
+        <li class="event-item">
+            <div class="event-info">
+                <strong>{{ event.title }}</strong><br>
+                <span>Date: {{ event.date }} | Time: {{ event.time }}</span><br>
+                <span>Location: {{ event.location }}</span><br>
+                <span>Description: {{ event.description }}</span>
+            </div>
+            <div class="event-actions">
+                <form method="POST" action="{{ url_for('player.rsvp_event', event_id=event.id) }}">
+                    <input type="text" name="player_name" placeholder="Your Name" required>
+                    <button type="submit" class="button rsvp">RSVP</button>
+                </form>
+            </div>
+            <div class="event-attendees">
+                <p><strong>Attendees:</strong> {{ event.attendees }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/view_events.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Player{% endblock %}
+
+{% block body_class %}edit-player-page{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/edit_player.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Edit Player</h1>
+    <form method="POST" id="edit-player-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ player.name }}" placeholder="Name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="{{ player.age }}" placeholder="Age" required min="0">
+
+        <label for="player_number">Player Number:</label>
+        <input type="number" id="player_number" name="player_number" value="{{ player.player_number }}" placeholder="Player Number" required min="0">
+        
+        <button type="submit" class="button">Update Player</button>
+    </form>
+</div>
+{% endblock %}

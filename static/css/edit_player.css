@@ -1,0 +1,81 @@
+/* General Styles for Edit Player Page */
+body.edit-player-page {
+    background: url('/static/images/soccerplayers.avif') no-repeat center center fixed; /* Add a background image */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    font-family: Arial, sans-serif;
+    color: #fff; /* Set text color to white for contrast */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: #fff; /* Ensure text inside the container is visible */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700; /* Bright yellow for the header */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add a subtle shadow */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #fff; /* Ensure label text is visible */
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9); /* Light semi-transparent background */
+    color: #000; /* Black text for input fields */
+}
+
+input:focus, textarea:focus {
+    border-color: #ffd700; /* Bright yellow border on focus */
+    outline: none;
+}
+
+/* Button Styles */
+.button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #3498db; /* Light blue button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.95);
+}

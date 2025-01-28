@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Lineup Manager{% endblock %}
+
+{% block body_class %}lineup-manager-page{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lineup_manager.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Lineup Manager</h1>
+    <div class="lineup-container">
+        <!-- Football Field -->
+        <div class="field">
+            <!-- Goal Areas -->
+            <div class="goal top-goal"></div>
+            <div class="goal bottom-goal"></div>
+
+            <!-- Positions -->
+            <div class="position" style="top: 95%; left: 50%;" data-position="GK">GK</div>
+            <div class="position" style="top: 80%; left: 20%;" data-position="LB">LB</div>
+            <div class="position" style="top: 80%; left: 62%;" data-position="CB">CB</div>
+            <div class="position" style="top: 80%; left: 38%;" data-position="CB">CB</div>
+            <div class="position" style="top: 80%; left: 80%;" data-position="RB">RB</div>
+            <div class="position" style="top: 60%; left: 30%;" data-position="LM">LM</div>
+            <div class="position" style="top: 60%; left: 50%;" data-position="CM">CM</div>
+            <div class="position" style="top: 60%; left: 70%;" data-position="RM">RM</div>
+            <div class="position" style="top: 40%; left: 25%;" data-position="LW">LW</div>
+            <div class="position" style="top: 40%; left: 75%;" data-position="RW">RW</div>
+            <div class="position" style="top: 20%; left: 50%;" data-position="ST">ST</div>
+        </div>
+
+        <!-- Available Players -->
+        <div class="players-list">
+            <h2>Available Players</h2>
+            <ul>
+                {% for player in players %}
+                <li class="player" draggable="true" data-player-id="{{ player.id }}">{{ player.name }}</li>
+                {% else %}
+                <li>No players available. Please create players first!</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <button class="button save-button">Save Lineup</button>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/lineup_manager.js') }}" defer></script>
+{% endblock %}

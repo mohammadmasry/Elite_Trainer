@@ -1,0 +1,155 @@
+/* Football Field Styling */
+
+body.lineup-manager-page {
+    font-family: 'Arial', sans-serif;
+    background: url('/static/images/pg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f2f2f2; /* Light gray for text */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffd700; /* Bright yellow */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+}
+
+h2 {
+    color: #f2f2f2; /* Light gray */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+.field {
+    position: relative;
+    width: 400px; /* Adjust width for better balance */
+    aspect-ratio: 3 / 5; /* Keep the field proportional */
+    background: #1e5631; /* Deep green field */
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Midline */
+.field::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #f2f2f2; /* Light gray */
+    transform: translateY(-50%);
+}
+
+/* Center Circle */
+.field::after {
+    content: "";
+    position: absolute;
+    top: 42.3%;
+    left: 39.5%;
+    width: 20%;
+    height: 14%;
+    border: 4px solid #f2f2f2; /* Light gray */
+    border-radius: 50%;
+}
+
+/* Goal Areas */
+.goal {
+    position: absolute;
+    width: 60%;
+    height: 9%;
+    border: 4px solid #f2f2f2;
+    left: 20%;
+}
+
+.goal.top-goal {
+    top: 0;
+}
+
+.goal.bottom-goal {
+    bottom: 0;
+}
+
+/* Position Styling */
+.position {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffd700; /* Bright yellow */
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.position.dragover {
+    outline: 3px dashed #ffd700; /* Bright yellow */
+}
+
+.position.assigned {
+    background: rgba(30, 86, 49, 0.8); /* Deep green with transparency */
+    color: #f2f2f2;
+    border: 2px solid #f2f2f2;
+}
+.lineup-container {
+    display: flex; /* Use Flexbox to align the field and the players list */
+    justify-content: center; /* Center the content horizontally */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Add spacing between the field and players list */
+    margin: 20px auto;
+    max-width: 90%; /* Restrict the container width for a neat layout */
+}
+
+.players-list {
+    margin: 0; /* Remove unnecessary margins */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Fixed width for the players list */
+    height: fit-content; /* Adjust height to content */
+    overflow-y: auto; /* Add scrolling if the content exceeds the height */
+    max-height: 500px; /* Optional: Limit the height */
+}
+
+.players-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.players-list li {
+    background: #6b8e23; /* Muted green */
+    color: #f2f2f2; /* Light gray text */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: grab;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.players-list li.dragging {
+    opacity: 0.5;
+}
+
+.button {
+    background-color: #6b8e23; /* Muted green */
+    color: #f2f2f2;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #ffd700; /* Bright yellow */
+    transform: scale(1.05);
+}
